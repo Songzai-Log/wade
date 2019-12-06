@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.archi.wade.dao.WadeDao" >
+    <resultMap id="wadeMap" type="com.archi.wade.model.Wade" >
+        <result column="id" property="id" jdbcType="INTEGER" />
+        <result column="chinese" property="chinese" jdbcType="VARCHAR" />
+        <result column="wade" property="wade" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="CarouselById" resultMap="wadeMap" parameterType="Integer">
+        select * from wade
+        <where>
+            id=#{id}
+        </where>
+    </select>
+
+    <select id="Wade2Chinese" resultMap="wadeMap" parameterType="String">
+        select * from wade
+        <where>
+            wade=#{string}
+        </where>
+    </select>
+
+    <select id="Chinese2Wade"  resultMap="wadeMap" parameterType="String">
+        select * from wade
+        <where>
+            chinese=#{string}
+        </where>
+    </select>
+
+    <insert id="insertWade"  parameterType="com.archi.wade.model.Wade">
+        insert into wade(chinese,wade)
+        values (#{wade.chinese},#{wade.wade})
+    </insert>
+
+    <delete id="deleteWade"  parameterType="com.archi.wade.model.Wade">
+         delete from wade where chinese=#{wade.chinese} and wade=#{wade.wade}
+    </delete>
+
+    <!--  有问题 -->
+    <update id="updateWade"  parameterType="com.archi.wade.model.Wade">
+        update wade set chinese=#{wade.chinese} and wade=#{wade.wade}
+    </update>
+</mapper>

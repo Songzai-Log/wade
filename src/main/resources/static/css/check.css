@@ -1,0 +1,49 @@
+ul li{  list-style: none;  }
+.change{
+    position: fixed;
+    top: 40%; left:40%;
+    padding:28px;
+    background: #5bc0de;
+    box-shadow: #2b542c 1px 1px;
+    display:none;
+}
+.change span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #337ab7;
+    font-size: 30px;
+    line-height: 30px;
+    float: right;
+    padding: 2px 10px;
+    color: #FFF;
+}
+
+.top{
+    padding:10px 0px 0 0;
+}
+
+.update{
+    position: fixed;
+    top: 40%; left:40%;
+    padding:28px;
+    background: #5bc0de;
+    box-shadow: #2b542c 1px 1px;
+    display:none;
+}
+
+.update .span1{
+    position: absolute;
+    background: #337ab7;
+    top: 0;
+    right: 0;
+    font-size: 30px;
+    line-height: 30px;
+    float: right;
+    padding: 2px 10px;
+    color: #FFF;
+}
+
+.top1{
+    padding:15px 0 0 0;
+}

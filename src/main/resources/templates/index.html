@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css}">
+    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="../static/js/user.js" th:src="@{/js/user.js}"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/user.css" th:href="@{css/user.css}">
+</head>
+<body>
+
+<h1 align="center">
+    威妥玛查询系统
+</h1><br>
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">首页</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li onclick="startcarousel()"><a><span class="glyphicon glyphicon-repeat"></span> 轮播学习</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-phone"></span> APP下载</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-download"></span> 客户端下载</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container" align="center">
+    <div><p><dt>威妥玛<span class="glyphicon glyphicon-resize-horizontal" style="width: 330px"></span>中文</dt></p></div>
+    <textarea id="wade" style="border:1px solid whitesmoke;background-color: whitesmoke; width: 565px;height: 150px;padding: 10px;resize: none;" placeholder="请输入威妥玛"  oninput="inputwade(this)"></textarea>
+    <textarea id="chinese" style="border:1px solid whitesmoke;background-color: whitesmoke; width: 565px;height: 150px;padding: 10px;resize: none;" placeholder="请输入中文" oninput="inputchinese(this)"></textarea><br>
+    <div align="right"><a href="#" onclick="submitfeeback()"><em>反馈&nbsp;&nbsp;</em></a></div>
+</div>
+<!--<form role="form">
+    <div class="form-group">
+        <label for="name">文本框</label>
+        <textarea class="form-control" rows="3"></textarea>
+    </div>
+</form>-->
+
+<ul class="feedback"><span onclick="closefeedback()">&times;</span>
+    <li>
+        <label for="feedback"  class="input-tips2">反馈信息：</label>
+        <div class="inputOuter2">
+            <textarea class="form-control"  id="feedback" name="feedback" rows="3"></textarea>
+            <!--<input type="text" id="feedback" name="feedback"/>-->
+        </div>
+    </li>
+    <li>
+        <label for="info"  class="input-tips2">联系方式：</label>
+        <div class="inputOuter2">
+            <input type="text" id="info" name="info"/>
+        </div>
+    </li>
+    <li>
+        <div class="top">
+            <button type="button" class="btn btn-primary " onclick="insertfeedback()">提交</button>
+        </div>
+    </li>
+</ul>
+
+<ul class="carousel"><span onclick="closecarousel()">&times;</span>
+    <li>
+        <div class="top" align="center">
+            <button type="button" class="btn btn-primary " id="auto" onclick="autocarousel()">自动轮播</button>
+            <button type="button" class="btn btn-primary " id="manual" onclick="manualcarousel()">手动轮播</button>
+            <br><br><br>
+            <div>
+                <p id="carousel1"></p>
+                <p id="carousel2"></p>
+            </div>
+            <br><br><br>
+            <button type="button"  id="forget" class="btn btn-warning " onclick="forget()">忘记了</button>
+            <button type="button" id="next" class="btn btn-success " onclick="startcarousel()">下一个</button>
+        </div>
+
+    </li>
+</ul>
+
+<!--<input type="text" id="kkp" placeholder="">-->
+<!--<textarea name="" oninput="Textarea(this)"></textarea>
+<script>
+    function Textarea(text){
+        document.getElementById("wade").innerText=text.value;
+    }
+</script>-->
+
+</body>
+</html>

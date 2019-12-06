@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" th:href="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css}">
+    <script src="../static/js/jquery.min.js" th:src="@{/js/jquery.min.js}"></script>
+    <script src="../static/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script src="../static/js/check.js" th:src="@{/js/check.js}"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/check.css" th:href="@{css/check.css}">
+</head>
+<body>
+<h1 align="center">威妥玛后台管理系统</h1><br>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">首页</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li onclick="add()"><a><span class="glyphicon glyphicon-plus"></span > 增加</a></li>
+                <li onclick="add()"><a><span class="glyphicon glyphicon-minus" ></span> 删除</a></li>
+                <li onclick="update()"><a><span class="glyphicon glyphicon-pencil"></span> 修改</a></li>
+            </ul>
+        </div>
+    </nav>
+<div class="container">
+<table class="table table-bordered table-hover table-condensed table-striped">
+    <caption><h4 align="center">反馈信息一览表</h4></caption>
+    <thead>
+    <tr align="center">
+        <td>ID</td>
+        <td>反馈信息</td>
+        <td>反馈时间</td>
+        <td>状态</td>
+        <td>操作</td>
+    </thead>
+    <tbody>
+    <tr  align="center">
+        <td>1</td>
+        <td>你好</td>
+        <td>10/11/2013</td>
+        <td>0</td>
+        <td><input type="button" align="right" value="删除" class="btn btn-danger" onclick="deletefeedback(1)"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<ul id="add" class="change"><span onclick="closechange()">&times;</span>
+    <li>
+        <label for="wade"  class="input-tips2">威妥玛：</label>
+        <div class="inputOuter2">
+            <input type="text" id="wade" name="wade"/>
+        </div>
+    </li>
+    <li>
+        <label for="chinese"  class="input-tips2">中文：</label>
+        <div class="inputOuter2">
+            <input type="text" id="chinese" name="chinese"/>
+        </div>
+    </li>
+    <li>
+        <div class="top">
+            <button type="button" class="btn btn-primary " onclick="addwade()">增加</button>
+            <button type="button" class="btn btn-danger" onclick="delwade()">删除</button>
+        </div>
+    </li>
+</ul>
+
+<ul id="update" class="update"><span class="span1" onclick="closeupdate()">&times;</span>
+    <li>
+        <label for="oldwade"  class="input-tips2">威妥玛：</label>
+        <div class="inputOuter2">
+            <input type="text" id="oldwade" name="oldwade" placeholder="旧威妥玛"/>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <input type="text" id="newwade" name="newwade" placeholder="新威妥玛"/>
+        </div>
+    </li>
+    <li>
+        <label for="oldchinese"  class="input-tips2">中文：</label>
+        <div class="inputOuter2">
+            <input type="text" id="oldchinese" name="oldchinese" placeholder="旧中文"/>
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            <input type="text" id="newchinese" name="newchinese" placeholder="新中文"/>
+        </div>
+    </li>
+    <li>
+        <div class="top1" align="center">
+            <button type="button" class="btn btn-success " onclick="updatewade()">修改</button>
+        </div>
+    </li>
+</ul>
+
+<script type="text/javascript">
+    initHtml();
+</script>
+</body>
+</html>

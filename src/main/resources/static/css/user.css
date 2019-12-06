@@ -1,0 +1,46 @@
+ul li{  list-style: none;  }
+.feedback{
+    position: fixed;
+    top: 40%; left:40%;
+    padding:28px;
+    background: #5bc0de;
+    box-shadow: #2b542c 1px 1px;
+    display:none;
+}
+.feedback span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #337ab7;
+    font-size: 20px;
+    line-height: 30px;
+    float: right;
+    padding: 2px 10px;
+    color: #FFF;
+}
+
+.top{
+    padding:10px 0px 0 0;
+}
+
+.carousel{
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    top: 34%; left:35%;
+    padding:30px;
+    background: #5bc0de;
+    box-shadow: #2b542c 1px 1px;
+    display:none;
+}
+.carousel span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #337ab7;
+    font-size: 20px;
+    line-height: 30px;
+    float: right;
+    padding: 2px 10px;
+    color: #FFF;
+}
